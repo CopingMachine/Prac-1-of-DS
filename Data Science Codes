@@ -1,0 +1,149 @@
+#Prac 1
+#creating list
+A=[1,23,'Hi','python']
+print(A)
+#append()use to append the value in list
+A.append(6)
+print(A)
+#insert() use to insert new value at a given index in the list.
+A.insert(2, 1.5)
+print(A)
+#Remove() use to remove/delete a value from the list
+A.remove(1.5)
+print(A)
+#POP() use to delete a value from a particular index(write index value)
+A.pop(2)
+print(A)
+#extend() use to extend the value in list
+B=['MEGHNA','BYE']
+A.extend(B)
+print(A)
+
+#prac 2
+att=()
+start = True
+while(start):
+ name = input("Enter your name : ")
+ roll = input("Enter your Rollno : ")
+ lec = input("Enter your lec attended : ")
+ stud = ("name: "+name,"roll no : "+roll,"lec attended : "+lec)
+ att += stud
+ req = int(input("enter 1 to insert more data or enter 2 to see the available data: 
+"))
+ if(req==1):
+ start = True 
+ else:
+ print(att)
+ start = False
+
+#prac 2B
+Roll_no = ("1","2","3","4","5","6")
+
+Name = ("meghna","bala","cheta","demon","eli","quinto")
+Att = (())
+DataS = (())
+ReTry = True
+print("\nStudent attendence :\n")
+from typing import Tuple
+import numpy as np
+DataS = ((roll_no) , (name))
+N = np.matrix(DataS)
+print(N)
+print(Att)
+print("\n")
+reEntry = input("Do you want add any new entries (Y/N):")
+if reEntry.upper() == "N":
+ pass
+else :
+ while(ReTry):
+ print("\n\t\tInsert new data:")
+ Name = input("Name :")
+ Roll_no = input("Roll NO :")
+ N =(str(Name),) 
+ R = (str(Roll_no),)
+roll_no += tuple(R)
+
+ name += tuple(N)
+ DataS = ((roll_no) , (name))
+ N = np.matrix(DataS)
+ print(N)
+ z = input("Continue.. (Y/N)")
+ if z.upper() == "Y":
+ ReTry = True
+ else:
+ ReTry = False
+for i in range(0,len(roll_no)):
+ log = input(f"(A/P) roll no {roll_no[i]} : ")
+ Att += ((roll_no[i],name[i],log.upper()),)
+N = np.matrix(Att)
+print("\n")
+print(N)
+
+#Prac 3
+employee1 = set(["Meghna", "Saumaya","Ram","Vinit"])
+
+employee2 = set(["Ram", "Krishna","Sanjay"])
+print("Employee Records:")
+print(employee1)
+print(employee2)
+employee1.add("Raj") #.add is use to add employee in set
+employee2.discard("Sanjay") #discard is use to remove employee from set
+print("\nIntersection of two said sets:")
+Intersection = employee1 & employee2 #Intersection means common name or employees 
+in both set
+print(Intersection)
+print("\nUnion of two said sets:")
+Union =employee1 | employee2
+print(Union) #Union means employees of all in both sets
+difference=employee1 -employee2
+print("\n Difference in employee1 from employee2:")
+print(difference)
+#We can check if a given set is a subset or superset of another set by campare sets
+print("Compare operation on sets of employees")
+compare= employee1 <=employee2
+compare2= employee1>= employee2
+print("compare :",compare)
+print("compare2 :",compare2)
+
+#Prac 4
+salary = {'Alan': 23000, 'meghna' : 34000, 'Max' : 20000, 'Peter' : 90000}
+
+print("\nDictionary available:", salary)
+#for getting highest salary
+print("Employee having highest salary is:",max(salary, key= salary.get))
+#for getting lowest salary
+print("Employee having lowest salary is:",min(salary, key= salary.get))
+#for getting particular employee's salary
+print(salary.get('meghna'))
+
+#prac 5
+s0 = "orange"
+s1 = "Hello this is python language"
+s2 = "lets learn about strings in python" 
+#CONCATENATING --> adding two strings together 
+print("-----THIS IS CONCATENATION--------")
+print(s1 + s2) #this is simply concatenating 
+print(s1 + ',' + s2) #to make it look pretty 
+#ITERATING --> going through the string character by character 
+print("-------THIS IS ITERATING---------")
+for i in s0:
+print(i) 
+#upper() --> it will turn string to uppercase 
+print("-------UPPERCASE---------")
+print(s0.upper()) 
+#join() --> it will join the other string after each element while iterating 
+str1 = '->'
+str2 = '1234' 
+print("-------JOINING---------") 
+print(str1.join(str2)) 
+string = 'Hello'
+print( '' + '.'.join(string)) 
+#split() --> it will split the string word by word 
+print("-------SPLITTING---------") 
+print(s1.split()) #this spilts word by word 
+print(s1.split(" ",2)) # this will split only first two words then take all other words in single inverted comma 
+#find() --> it will find the character or word you want and return the indexx 
+print("-------FINDING(returns index of the word you want)---------")
+print(s1.find('this')) 
+print("-------REPLACING---------")
+print(s1.replace('Hello','hey'))
